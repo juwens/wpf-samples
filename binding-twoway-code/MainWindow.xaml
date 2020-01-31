@@ -1,0 +1,44 @@
+﻿<Window x:Class="binding_twoway_code.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:binding_twoway_code"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="250" Width="400">
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0">
+            <Label.Content>
+                <StackPanel>
+                    <TextBlock FontWeight="SemiBold">Source</TextBlock>
+                    <TextBlock>would be the VM in MVVM</TextBlock>
+                </StackPanel>
+            </Label.Content>
+        </Label>
+               
+        <TextBox Width="100" Name="_source" Grid.Row="1" Grid.Column="0" />
+
+        <Label  Grid.Row="0" Grid.Column="1">
+            <Label.Content>
+                <StackPanel>
+                    <TextBlock FontWeight="SemiBold">Target</TextBlock>
+                    <TextBlock>(Updates Source on LostFocus)</TextBlock>
+                </StackPanel>
+            </Label.Content>
+        </Label>
+        
+        <TextBox Width="100" Name="_target" Grid.Row="1" Grid.Column="1" />
+
+        <Control  Focusable="True" Grid.Row="2" Grid.ColumnSpan="2" /> <!-- added to allow LostFocus for _target on pressing Tab -->
+    </Grid>
+</Window>
